@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePro Eric - Americana</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+</head>
+<body class="bg-slate-950 text-white flex flex-col items-center justify-center min-h-screen">
+    <div class="text-center p-8 bg-slate-900 rounded-[40px] border border-green-500/20 shadow-2xl">
+        <h1 class="text-3xl font-black italic text-green-500 mb-6 uppercase">HomePro Eric</h1>
+        <div class="mb-8">
+            <p class="text-slate-500 text-[10px] uppercase tracking-widest mb-1">Saldo em Americana</p>
+            <p class="text-5xl font-black">R$ <span id="saldo">0,00</span></p>
+        </div>
+        <button onclick="add()" class="bg-green-600 hover:bg-green-500 text-white font-black py-5 px-10 rounded-2xl active:scale-95 transition-all w-full text-xl shadow-lg">
+            COLETAR LUCRO 🚀
+        </button>
+    </div>
+    <script>
+        let valor = 0;
+        function add() {
+            valor += 15.50;
+            document.getElementById('saldo').innerText = valor.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+        }
+    </script>
+</body>
+</html>
