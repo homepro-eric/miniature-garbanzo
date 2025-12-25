@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePro Eric</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+</head>
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen">
+    <div class="text-center p-8 bg-zinc-900 rounded-3xl border border-green-500 shadow-2xl">
+        <h1 class="text-3xl font-black text-green-500 mb-4 italic">HOMEPRO ERIC</h1>
+        <p class="text-zinc-400 text-xs uppercase mb-1">Saldo em Americana</p>
+        <p class="text-5xl font-black mb-8">R$ <span id="saldo">0,00</span></p>
+        <button onclick="add()" class="bg-green-600 px-10 py-4 rounded-xl font-black uppercase active:scale-90 transition-all">
+            Coletar Lucros 🚀
+        </button>
+    </div>
+    <script>
+        let s = 0;
+        function add() {
+            s += 12.50;
+            document.getElementById('saldo').innerText = s.toFixed(2).replace('.', ',');
+        }
+    </script>
+</body>
+</html>
