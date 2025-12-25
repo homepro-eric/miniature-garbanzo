@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePro Eric</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <title>HomePro Eric | Americana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen">
-    <div class="text-center p-8 bg-zinc-900 rounded-3xl border border-green-500 shadow-2xl">
-        <h1 class="text-3xl font-black text-green-500 mb-4 italic">HOMEPRO ERIC</h1>
-        <p class="text-zinc-400 text-xs uppercase mb-1">Saldo em Americana</p>
-        <p class="text-5xl font-black mb-8">R$ <span id="saldo">0,00</span></p>
-        <button onclick="add()" class="bg-green-600 px-10 py-4 rounded-xl font-black uppercase active:scale-90 transition-all">
-            Coletar Lucros 🚀
+<body class="bg-zinc-950 text-white font-sans min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-md w-full bg-zinc-900 border border-zinc-800 rounded-[2.5rem] p-8 shadow-2xl text-center">
+        <!-- Ícone -->
+        <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/20">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+        </div>
+
+        <h1 class="text-3xl font-black italic tracking-tighter text-white mb-2 uppercase">HomePro Eric</h1>
+        <p class="text-zinc-500 text-sm mb-8 uppercase tracking-[0.2em]">Serviços Profissionais</p>
+
+        <!-- Saldo / Status -->
+        <div class="bg-black/40 rounded-3xl p-6 mb-8 border border-white/5">
+            <p class="text-zinc-500 text-[10px] uppercase font-bold mb-1 tracking-widest">Saldo Disponível</p>
+            <p class="text-5xl font-black text-white">R$ <span id="valor">0,00</span></p>
+        </div>
+
+        <!-- Botão -->
+        <button onclick="addLucro()" class="w-full bg-green-600 hover:bg-green-500 text-white font-black py-5 rounded-2xl transition-all active:scale-95 shadow-lg shadow-green-900/20 text-xl uppercase tracking-tight">
+            Coletar Lucro 🚀
         </button>
+
+        <p class="mt-8 text-zinc-600 text-[10px] uppercase font-bold tracking-widest">Unidade Americana - SP</p>
     </div>
+
     <script>
-        let s = 0;
-        function add() {
-            s += 12.50;
-            document.getElementById('saldo').innerText = s.toFixed(2).replace('.', ',');
+        let saldo = 0;
+        function addLucro() {
+            saldo += 12.50;
+            document.getElementById('valor').innerText = saldo.toLocaleString('pt-BR', {minimumFractionDigits: 2});
         }
     </script>
 </body>
